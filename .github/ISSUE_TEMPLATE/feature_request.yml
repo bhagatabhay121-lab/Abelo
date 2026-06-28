@@ -1,0 +1,27 @@
+name: 🚀 Feature Request
+description: Suggest a new feature or improvement for Abelo
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem?
+      placeholder: "A clear description of what the problem is. e.g. I'm always frustrated when..."
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the Solution You'd Like
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context

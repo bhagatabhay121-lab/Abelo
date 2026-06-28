@@ -1,0 +1,49 @@
+# ── Dart / Flutter ────────────────────────────────────────────────────────────
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.fvm/
+.packages
+build/
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+
+# ── Android ───────────────────────────────────────────────────────────────────
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+
+# ── iOS / macOS ───────────────────────────────────────────────────────────────
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+ios/.symlinks/
+Pods/
+*.xcworkspace
+DerivedData/
+
+# ── Windows / Linux / Web ─────────────────────────────────────────────────────
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+web/.dart_tool/
+
+# ── Sensitive — NEVER commit these ───────────────────────────────────────────
+secrets.dart
+*.env
+.env*
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+coverage/
+doc/api/
+*.log

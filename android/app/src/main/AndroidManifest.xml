@@ -1,0 +1,119 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NETWORK -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- STORAGE -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- AUDIO / MEDIA PLAYBACK -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- NOTIFICATIONS (POST_NOTIFICATIONS required on Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- LOCK SCREEN OVERLAY -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <application
+        android:label="Abelo"
+        android:name="com.example.taar.TaarApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name="com.example.taar.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true">
+
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- just_audio_background foreground service -->
+        <service
+            android:name="com.ryanheise.audioservice.AudioService"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <!-- Hardware media button receiver (headphones, Bluetooth, lock screen) -->
+        <receiver
+            android:name="com.ryanheise.audioservice.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+            Widget receiver.
+            Handles widget lifecycle, button taps, AlarmManager polls,
+            and external media-session change broadcasts.
+        -->
+        <receiver android:name=".TaarWidgetProvider" android:exported="true">
+            <intent-filter>
+                <!-- System widget lifecycle -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <!-- Widget button presses -->
+                <action android:name="ACTION_PLAY_PAUSE" />
+                <action android:name="ACTION_SKIP_PREV" />
+                <action android:name="ACTION_SKIP_NEXT" />
+
+                <!-- AlarmManager periodic poll (every 15 s) -->
+                <action android:name="com.example.taar.WIDGET_POLL" />
+
+                <!-- just_audio_background / audio_service state broadcasts -->
+                <action android:name="com.ryanheise.audioservice.STATE_CHANGED" />
+                <action android:name="com.ryanheise.audioservice.MEDIA_ITEM_CHANGED" />
+
+                <!-- Standard Android media session broadcasts (fallback) -->
+                <action android:name="android.media.METADATA_CHANGED" />
+                <action android:name="android.media.PLAYBACK_STATE_CHANGED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/taar_widget_info" />
+        </receiver>
+
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT" />
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
+
+</manifest>
