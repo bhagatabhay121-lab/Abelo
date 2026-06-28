@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/icon/app_icon.png" alt="Abelo Logo" width="100" height="100" style="border-radius:20px"/>
+<img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/assets/icon/app_icon.png" alt="Abelo Logo" width="100" height="100" style="border-radius:20px"/>
 
 # Abelo 🎵
 
@@ -25,15 +25,15 @@
 
 | Home | Home (Charts) | Search |
 |:---:|:---:|:---:|
-| <img src="screenshots/01_home.png" width="200"/> | <img src="screenshots/02_home_charts.png" width="200"/> | <img src="screenshots/03_search.png" width="200"/> |
+| <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/01_home.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/02_home_charts.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/03_search.png" width="200"/> |
 
 | Search Results | Library | Playlist |
 |:---:|:---:|:---:|
-| <img src="screenshots/04_search_results.png" width="200"/> | <img src="screenshots/05_library.png" width="200"/> | <img src="screenshots/06_playlist.png" width="200"/> |
+| <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/04_search_results.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/05_library.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/06_playlist.png" width="200"/> |
 
 | Device Music |
 |:---:|
-| <img src="screenshots/07_device_music.png" width="200"/> |
+| <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/07_device_music.png" width="200"/> |
 
 </div>
 
