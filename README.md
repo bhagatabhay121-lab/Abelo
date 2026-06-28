@@ -27,7 +27,7 @@
 |:---:|:---:|:---:|
 | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/01_home.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/02_home_charts.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/03_search.png" width="200"/> |
 
-| Search Results | Library | Playlist |
+| Library | Search Results | Playlist |
 |:---:|:---:|:---:|
 | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/04_search_results.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/05_library.png" width="200"/> | <img src="https://raw.githubusercontent.com/bhagatabhay121-lab/Abelo/main/screenshots/06_playlist.png" width="200"/> |
 
